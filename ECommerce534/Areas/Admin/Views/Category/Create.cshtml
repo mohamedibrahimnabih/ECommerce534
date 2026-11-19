@@ -1,0 +1,43 @@
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Categories</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="/Admin/Category/index">Categories</a></li>
+            <li class="breadcrumb-item active">Create</li>
+        </ol>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-plus me-1"></i>
+                Create Category
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="Name" class="form-label fw-semibold">Name</label>
+                        <input type="text" class="form-control" id="Name" name="name" placeholder="Enter category name" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="Status" class="form-label fw-semibold">Status</label>
+                        <select class="form-select" name="status" id="Status">
+                            <option value="true">Active</option>
+                            <option value="false">In Active</option>
+                        </select>
+                        <span class="text-danger small" asp-validation-for="Status"></span>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save me-1"></i> Save
+                        </button>
+                        <a href="/Admin/Category/index" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Back
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
