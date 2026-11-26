@@ -10,7 +10,8 @@ public enum FileType
 public enum EntityType
 {
     brand,
-    product
+    product,
+    productSubImg
 }
 
 
@@ -31,6 +32,8 @@ public class FileUpload : IFileUpload
                     return Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\brands", fileName);
                 case EntityType.product:
                     return Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\products", fileName);
+                case EntityType.productSubImg:
+                    return Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images\\products\\sub-imgs", fileName);
                 default:
                     throw new Exception("Invalid entity Type");
             }

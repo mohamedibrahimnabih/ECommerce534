@@ -50,6 +50,8 @@ public class HomeController : Controller
         return View(new ProductWithRelatedVM
         {
             Product = product,
+            //ProductSubImgs = _context.ProductSubImgs.Where(e=>e.ProductId == id),
+            //ProductColors = _context.ProductColors.Where(e=>e.ProductId == id),
             RelatedProductsByName = relatedProductsByName,
             RelatedProductsByCategoryName = relatedProductsByCategoryName
         });

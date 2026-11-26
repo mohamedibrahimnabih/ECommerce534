@@ -104,6 +104,16 @@ public class BrandController : Controller
         var brand = _context.Brands/*.AsNoTracking()*/.SingleOrDefault(e => e.Id == id);
         if (brand is null) return NotFound();
 
+        if(brand.Logo is not null)
+        {
+            var filePath = _fileUpload.GetFullPathName(brand.Logo, FileType.Img, EntityType.brand);
+
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
+        }
+
         _context.Brands.Remove(brand);
         _context.SaveChanges();
 
